@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Saludo extends AppCompatActivity {
-    private Button bt_salir;
+    private Button btSalir;
     private TextView resul;
     private String mensaje="";
 
@@ -17,24 +17,15 @@ public class Saludo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saludo);
-
-        bt_salir=(Button) findViewById(R.id.button_salir);
-
+        btSalir=(Button) findViewById(R.id.button_salir);
         resul=(TextView) findViewById(R.id.textView_resultado);
-
         mensaje=getIntent().getStringExtra("VALOR");
-
-        resul.setText("Hola:\n"+mensaje);
-
-        bt_salir.setOnClickListener(new View.OnClickListener() {
+        resul.setText(mensaje);
+        btSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
-
-
-
-
     }
 }
